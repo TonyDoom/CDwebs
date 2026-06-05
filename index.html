@@ -2,7 +2,7 @@
 <html class="light" lang="es">
 <head>
 <meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 <meta name="description" content="Ethereal Dental - Odontología de vanguardia con tecnología avanzada">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -135,21 +135,124 @@
             height: 24px;
             transition: all 0.3s ease;
         }
+
+        /* ========================================
+           RESPONSIVE MOBILE FIXES
+           ======================================== */
+        html, body {
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+
+        /* Ajustes para móvil */
+        @media (max-width: 768px) {
+            /* Paddings reducidos */
+            .px-margin-desktop {
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+            }
+            
+            .mb-section-gap {
+                margin-bottom: 60px !important;
+            }
+            
+            /* Títulos más pequeños */
+            .text-display-lg {
+                font-size: 38px !important;
+                line-height: 44px !important;
+            }
+            
+            .text-headline-lg {
+                font-size: 28px !important;
+                line-height: 36px !important;
+            }
+            
+            .text-headline-md {
+                font-size: 24px !important;
+                line-height: 32px !important;
+            }
+
+            /* Hero section */
+            .grid.lg\:grid-cols-2 {
+                gap: 40px !important;
+            }
+
+            /* Contenedor del video más pequeño */
+            .video-container-mobile {
+                max-width: 280px !important;
+                border-width: 4px !important;
+            }
+
+            /* Tarjetas con menos padding */
+            .glass-card.p-10,
+            .glass-card.p-stack-lg {
+                padding: 20px !important;
+            }
+
+            /* Botones a ancho completo */
+            .flex.flex-col.sm\:flex-row > a,
+            .flex.flex-col.sm\:flex-row > button {
+                width: 100%;
+            }
+
+            /* Testimoniales */
+            .bg-white.p-10 {
+                padding: 24px !important;
+            }
+
+            /* Footer */
+            footer.pt-section-gap {
+                padding-top: 60px !important;
+            }
+
+            /* Mapa */
+            .min-h-\[450px\] {
+                min-height: 300px !important;
+            }
+
+            /* Navegación */
+            nav .px-margin-desktop {
+                padding-left: 16px !important;
+                padding-right: 16px !important;
+            }
+
+            /* Ocultar texto "Ethereal Dental" en móvil si estorba */
+            .nav-title-mobile {
+                font-size: 18px !important;
+            }
+        }
+
+        /* Móvil muy pequeño */
+        @media (max-width: 375px) {
+            .px-margin-desktop {
+                padding-left: 16px !important;
+                padding-right: 16px !important;
+            }
+            
+            .text-display-lg {
+                font-size: 32px !important;
+                line-height: 38px !important;
+            }
+
+            .video-container-mobile {
+                max-width: 240px !important;
+            }
+        }
     </style>
 </head>
 <body class="bg-mesh text-on-background font-body-md selection:bg-primary/20">
 <!-- Top Navigation Bar -->
 <nav class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-md border-b border-white/20 shadow-[0px_20px_40px_rgba(0,0,0,0.04)]" role="navigation" aria-label="Navegación principal">
-<div class="flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="flex justify-between items-center px-4 sm:px-6 lg:px-margin-desktop py-3 lg:py-4 max-w-container-max mx-auto">
 <div class="flex items-center gap-2 group">
 <!-- Dental Logo SVG -->
-<div class="h-10 w-10 bg-primary rounded-lg flex items-center justify-center">
-  <svg viewBox="0 0 24 24" fill="white" class="w-7 h-7" xmlns="http://www.w3.org/2000/svg">
+<div class="h-8 w-8 lg:h-10 lg:w-10 bg-primary rounded-lg flex items-center justify-center">
+  <svg viewBox="0 0 24 24" fill="white" class="w-5 h-5 lg:w-7 lg:h-7" xmlns="http://www.w3.org/2000/svg">
     <path d="M12 2C8.5 2 6 4.5 6 8c0 2.5 1.5 4.5 3 6.5 1 1.5 2 3 2 5.5V22h2v-2c0-2.5 1-4 2-5.5 1.5-2 3-4 3-6.5 0-3.5-2.5-6-6-6zm0 2c2.5 0 4 1.5 4 4 0 2-1 3.5-2.5 5.5-.5.5-1 1.5-1.5 2.5-.5-1-1-2-1.5-2.5C9 11.5 8 10 8 8c0-2.5 1.5-4 4-4z"/>
     <path d="M12 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" opacity="0.6"/>
   </svg>
 </div>
-<span class="font-display-lg text-headline-md text-primary tracking-tight">Ethereal Dental</span>
+<span class="font-display-lg text-lg sm:text-xl lg:text-headline-md text-primary tracking-tight nav-title-mobile">Ethereal Dental</span>
 </div>
 <div class="hidden md:flex items-center gap-stack-lg">
 <a class="font-label-md text-label-md text-primary font-bold border-b-2 border-primary transition-all duration-300" href="#" aria-current="page">Inicio</a>
@@ -157,50 +260,51 @@
 <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-all duration-300" href="#nosotros">Nosotros</a>
 <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-all duration-300" href="#contacto">Contacto</a>
 </div>
-<a href="https://wa.me/525551234567?text=Hola,%20quisiera%20agendar%20una%20cita%20dental" target="_blank" rel="noopener noreferrer" class="pill-action bg-primary text-white px-6 py-3 font-label-md text-label-md transition-transform active:scale-95 shadow-lg shadow-primary/20" aria-label="Agendar cita por WhatsApp">
-                Agendar Cita
+<a href="https://wa.me/525551234567?text=Hola,%20quisiera%20agendar%20una%20cita%20dental" target="_blank" rel="noopener noreferrer" class="pill-action bg-primary text-white px-3 sm:px-6 py-2 sm:py-3 text-xs sm:text-label-md transition-transform active:scale-95 shadow-lg shadow-primary/20 whitespace-nowrap" aria-label="Agendar cita por WhatsApp">
+                <span class="hidden sm:inline">Agendar Cita</span>
+                <span class="sm:hidden">Cita</span>
             </a>
 </div>
 </nav>
-<main class="relative pt-24">
+<main class="relative pt-20 lg:pt-24">
 <!-- Ambient background elements -->
-<div class="absolute top-20 -left-20 w-[500px] h-[500px] bg-primary rounded-full ambient-glow" aria-hidden="true"></div>
-<div class="absolute top-[800px] -right-20 w-[600px] h-[600px] bg-secondary rounded-full ambient-glow" aria-hidden="true"></div>
+<div class="absolute top-20 -left-20 w-[300px] h-[300px] lg:w-[500px] lg:h-[500px] bg-primary rounded-full ambient-glow" aria-hidden="true"></div>
+<div class="absolute top-[800px] -right-20 w-[400px] h-[400px] lg:w-[600px] lg:h-[600px] bg-secondary rounded-full ambient-glow" aria-hidden="true"></div>
 <!-- Split Hero Section -->
-<section class="px-margin-desktop max-w-container-max mx-auto py-20 lg:py-32 grid lg:grid-cols-2 gap-16 items-center relative z-10" aria-labelledby="hero-title">
-<div class="order-2 lg:order-1">
-<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary-container/20 text-secondary border border-secondary/10 mb-stack-lg">
-<span class="material-symbols-outlined text-[18px]" aria-hidden="true">verified</span>
+<section class="px-4 sm:px-6 lg:px-margin-desktop max-w-container-max mx-auto py-12 lg:py-20 xl:py-32 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center relative z-10" aria-labelledby="hero-title">
+<div class="order-2 lg:order-1 text-center lg:text-left">
+<div class="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-secondary-container/20 text-secondary border border-secondary/10 mb-stack-lg">
+<span class="material-symbols-outlined text-[16px] sm:text-[18px]" aria-hidden="true">verified</span>
 <span class="font-label-sm text-label-sm uppercase tracking-wider">Cuidado de Clase Mundial</span>
 </div>
 <h1 id="hero-title" class="font-display-lg text-display-lg mb-stack-md leading-tight text-on-surface">
                     Tu sonrisa es nuestra <span class="text-primary italic">obra maestra</span>
 </h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-stack-lg">
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto lg:mx-0 mb-stack-lg">
                     Experimenta la odontología de vanguardia donde la <span class="font-bold text-on-surface">ciencia y el arte</span> se unen para una salud dental integral y resultados estéticos deslumbrantes.
                 </p>
-<div class="flex flex-col sm:flex-row gap-4 mb-stack-lg">
-<a href="https://wa.me/525551234567?text=Hola,%20quisiera%20agendar%20una%20cita%20dental" target="_blank" rel="noopener noreferrer" class="pill-action bg-primary text-white px-10 py-4 font-headline-md text-body-lg shadow-xl shadow-primary/20 text-center" aria-label="Agendar cita dental">
+<div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-stack-lg">
+<a href="https://wa.me/525551234567?text=Hola,%20quisiera%20agendar%20una%20cita%20dental" target="_blank" rel="noopener noreferrer" class="pill-action bg-primary text-white px-6 sm:px-10 py-3 sm:py-4 text-base sm:text-body-lg shadow-xl shadow-primary/20 text-center" aria-label="Agendar cita dental">
                         Agendar Cita
                     </a>
-<button class="pill-action border-2 border-primary/20 text-primary bg-white/50 backdrop-blur-sm px-10 py-4 font-headline-md text-body-lg hover:bg-primary/5 transition-colors" aria-label="Ver servicios dentales" onclick="document.getElementById('servicios').scrollIntoView({behavior: 'smooth'})">
+<button class="pill-action border-2 border-primary/20 text-primary bg-white/50 backdrop-blur-sm px-6 sm:px-10 py-3 sm:py-4 text-base sm:text-body-lg hover:bg-primary/5 transition-colors" aria-label="Ver servicios dentales" onclick="document.getElementById('servicios').scrollIntoView({behavior: 'smooth'})">
                         Ver Servicios
                     </button>
 </div>
-<div class="flex items-center gap-4">
+<div class="flex items-center gap-4 justify-center lg:justify-start">
 <div class="flex -space-x-3">
-<img alt="Dr 1" class="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGJ944ByrjfmnZB2vgWDrELhsek-WlpdjGXsInHR3hzT_KjR7ey1p01SCK9PSQVLrBIJhYFsh8nGE_X0EytNb-8QD9IyIU_W-Im4kz2_urwZkBDnt0ZvlAER91Eh4i1Y4oM5LNNN2GcmgR6mdGTXOc8kMbI-6mDd-bSPpqOSrmB3jF1rsuDQIWS637sSED9SBeAEukIKi_qqRzeCuMdAor4z4o4q7FzshCYq1XIzZ_o0S2rhKKaWQIK98A86u_F_DnDmf7b0aN6BI" loading="lazy">
-<img alt="Dr 2" class="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzWrDwiGLfQADFI3DGywSE6pQQjpg1jRRBS3RhSisV-yxJxDMyVFSUMBjgkf7o2rhtQxBISlasCDkRoutnBU8H6xWx67IfMUp5K0uqjpE7v8IcLLKOTxlDiOl22rQznPKtqUOjjzLJFKp4eXuQRV0PLtpTPd-ZRT0r5HgVvIAVr7ccDwhiStZSetS3AuWV3NakAsldEWicSybjTceMrtdSdzu6UYtiJc59S_10JaLcfbCaQ6TLy_yRW6-jfiXl-sI2OxdrzGg7j8c" loading="lazy">
-<img alt="Dr 3" class="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWFrJbkIm4OxN6zSTjg0_H_cm6dwicA_lH96QYcPQg5Mhhpu7hkR7MRc1tZCBe9QVsl2tU81M8hdrUdzCOMcy5gFqv2-z2WixCdMmSSo3KtAa-351b8NtaLIACB80eX4b1DV5TVQUnLnJClQv9N41AQEyF5N-93CMpTgQH0necb0lpnnEcThqg58esI5_J1wX_ay4FJMFKnTPsBZyKVkPU-B3gvr-PlpRwfNkYLdSpyNcb43oH6LovKvekrmB0sGAoARraztf5C-Y" loading="lazy">
+<img alt="Dr 1" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border-2 border-white object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGJ944ByrjfmnZB2vgWDrELhsek-WlpdjGXsInHR3hzT_KjR7ey1p01SCK9PSQVLrBIJhYFsh8nGE_X0EytNb-8QD9IyIU_W-Im4kz2_urwZkBDnt0ZvlAER91Eh4i1Y4oM5LNNN2GcmgR6mdGTXOc8kMbI-6mDd-bSPpqOSrmB3jF1rsuDQIWS637sSED9SBeAEukIKi_qqRzeCuMdAor4z4o4q7FzshCYq1XIzZ_o0S2rhKKaWQIK98A86u_F_DnDmf7b0aN6BI" loading="lazy">
+<img alt="Dr 2" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border-2 border-white object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzWrDwiGLfQADFI3DGywSE6pQQjpg1jRRBS3RhSisV-yxJxDMyVFSUMBjgkf7o2rhtQxBISlasCDkRoutnBU8H6xWx67IfMUp5K0uqjpE7v8IcLLKOTxlDiOl22rQznPKtqUOjjzLJFKp4eXuQRV0PLtpTPd-ZRT0r5HgVvIAVr7ccDwhiStZSetS3AuWV3NakAsldEWicSybjTceMrtdSdzu6UYtiJc59S_10JaLcfbCaQ6TLy_yRW6-jfiXl-sI2OxdrzGg7j8c" loading="lazy">
+<img alt="Dr 3" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border-2 border-white object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWFrJbkIm4OxN6zSTjg0_H_cm6dwicA_lH96QYcPQg5Mhhpu7hkR7MRc1tZCBe9QVsl2tU81M8hdrUdzCOMcy5gFqv2-z2WixCdMmSSo3KtAa-351b8NtaLIACB80eX4b1DV5TVQUnLnJClQv9N41AQEyF5N-93CMpTgQH0necb0lpnnEcThqg58esI5_J1wX_ay4FJMFKnTPsBZyKVkPU-B3gvr-PlpRwfNkYLdSpyNcb43oH6LovKvekrmB0sGAoARraztf5C-Y" loading="lazy">
 </div>
 <p class="text-label-sm font-label-sm text-on-surface-variant">Confianza de <span class="font-bold text-primary">2,500+</span> pacientes felices</p>
 </div>
 </div>
 <div class="order-1 lg:order-2">
-<div class="relative group rounded-[40px] overflow-hidden glass-card border-8 border-white/40 aspect-[9/16] max-w-[380px] mx-auto shadow-2xl">
+<div class="relative group rounded-[32px] lg:rounded-[40px] overflow-hidden glass-card border-4 lg:border-8 border-white/40 aspect-[9/16] max-w-[280px] sm:max-w-[320px] lg:max-w-[380px] mx-auto shadow-2xl video-container-mobile">
 <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 pointer-events-none"></div>
-<!-- VIDEO CONTAINER -->
-<<video 
+<!-- VIDEO CONTAINER - CORREGIDO -->
+<video 
   class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
   autoplay 
   muted 
@@ -208,97 +312,84 @@
   playsinline
   preload="auto"
   aria-label="Video demostrativo de procedimiento dental">
-  
   <source src="/videos/dental-5s.mp4" type="video/mp4">
-  
-  <!-- Fallback image si el video no carga -->
-  <img 
-    class="w-full h-full object-cover" 
-    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW7iedoa44TD65gK_gc4pV1YtIjWbx_o35VmLJcXsgb9CftqKwezY_X34NnpZuHxclcA-c-WHgYgAUmOliQPtNCbVsZWeMlSxvPywEavMLilF_-zMJc-uLl-78V9z3XgE1ce2NBKlOxYmCyZzw2koeUocozwlHFy8biyt6mcfMByUvuX1VYHUBcSoaIcRH7DfcdorGTl1LznIihY21cK_O2_L-QCxNRee6a52_Ij9kDxl20ns3AYgvwnJJhk3WUJ0TYfi98t63j70" 
-    loading="lazy"
-    alt="Procedimiento dental moderno">
 </video>
-<div class="absolute inset-0 flex items-center justify-center z-20">
-<button class="...">
-  <span class="material-symbols-outlined"></span>
-</button>
-</div>
-<div class="absolute bottom-10 left-8 right-8 z-20 text-white">
-<p class="font-display-lg text-headline-md mb-2">Painless Tech</p>
-<p class="font-body-md opacity-90 leading-snug">Descubre cómo rediseñamos tu experiencia dental.</p>
+<div class="absolute bottom-6 sm:bottom-10 left-4 sm:left-8 right-4 sm:right-8 z-20 text-white">
+<p class="font-display-lg text-xl sm:text-headline-md mb-1 sm:mb-2">Painless Tech</p>
+<p class="text-sm sm:text-body-md opacity-90 leading-snug">Descubre cómo rediseñamos tu experiencia dental.</p>
 </div>
 </div>
 </div>
 </section>
 <!-- Technology Features Section -->
-<section class="px-margin-desktop max-w-container-max mx-auto mb-section-gap" aria-labelledby="tech-title">
-<div class="text-center mb-16">
+<section class="px-4 sm:px-6 lg:px-margin-desktop max-w-container-max mx-auto mb-16 lg:mb-section-gap" aria-labelledby="tech-title">
+<div class="text-center mb-10 lg:mb-16">
 <h2 id="tech-title" class="font-headline-lg text-headline-lg text-primary mb-4">Innovación a su servicio</h2>
 <p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto">Invertimos en la tecnología más avanzada para garantizar diagnósticos precisos y tratamientos mínimamente invasivos.</p>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<div class="glass-card p-10 rounded-[32px] hover:border-primary/30 transition-all group">
-<div class="w-16 h-16 bg-primary-container/10 rounded-2xl flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform" aria-hidden="true">
-<span class="material-symbols-outlined text-[10px]">biometric_setup</span>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+<div class="glass-card p-6 sm:p-8 lg:p-10 rounded-2xl lg:rounded-[32px] hover:border-primary/30 transition-all group">
+<div class="w-14 h-14 lg:w-16 lg:h-16 bg-primary-container/10 rounded-2xl flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform" aria-hidden="true">
+<span class="material-symbols-outlined text-[32px] lg:text-[40px]">biometric_setup</span>
 </div>
-<h3 class="font-headline-md text-headline-md mb-4 text-on-surface">Escaneo Digital 3D</h3>
+<h3 class="font-headline-md text-xl lg:text-headline-md mb-3 lg:mb-4 text-on-surface">Escaneo Digital 3D</h3>
 <p class="font-body-md text-on-surface-variant leading-relaxed">Olvídate de las impresiones incómodas. Capturamos cada detalle de tu boca en segundos con precisión milimétrica.</p>
 </div>
-<div class="glass-card p-10 rounded-[32px] hover:border-secondary/30 transition-all group">
-<div class="w-16 h-16 bg-secondary-container/10 rounded-2xl flex items-center justify-center text-secondary mb-6 group-hover:scale-110 transition-transform" aria-hidden="true">
-<span class="material-symbols-outlined text-[40px]">magic_button</span>
+<div class="glass-card p-6 sm:p-8 lg:p-10 rounded-2xl lg:rounded-[32px] hover:border-secondary/30 transition-all group">
+<div class="w-14 h-14 lg:w-16 lg:h-16 bg-secondary-container/10 rounded-2xl flex items-center justify-center text-secondary mb-6 group-hover:scale-110 transition-transform" aria-hidden="true">
+<span class="material-symbols-outlined text-[32px] lg:text-[40px]">magic_button</span>
 </div>
-<h3 class="font-headline-md text-headline-md mb-4 text-on-surface">Laser Indoloro</h3>
+<h3 class="font-headline-md text-xl lg:text-headline-md mb-3 lg:mb-4 text-on-surface">Laser Indoloro</h3>
 <p class="font-body-md text-on-surface-variant leading-relaxed">Tratamientos de encías y caries rápidos, precisos y prácticamente sin dolor, acelerando tu recuperación.</p>
 </div>
-<div class="glass-card p-10 rounded-[32px] hover:border-tertiary/30 transition-all group">
-<div class="w-16 h-16 bg-tertiary-container/10 rounded-2xl flex items-center justify-center text-tertiary mb-6 group-hover:scale-110 transition-transform" aria-hidden="true">
-<span class="material-symbols-outlined text-[40px]">biotech</span>
+<div class="glass-card p-6 sm:p-8 lg:p-10 rounded-2xl lg:rounded-[32px] hover:border-tertiary/30 transition-all group">
+<div class="w-14 h-14 lg:w-16 lg:h-16 bg-tertiary-container/10 rounded-2xl flex items-center justify-center text-tertiary mb-6 group-hover:scale-110 transition-transform" aria-hidden="true">
+<span class="material-symbols-outlined text-[32px] lg:text-[40px]">biotech</span>
 </div>
-<h3 class="font-headline-md text-headline-md mb-4 text-on-surface">IA Diagnóstica</h3>
+<h3 class="font-headline-md text-xl lg:text-headline-md mb-3 lg:mb-4 text-on-surface">IA Diagnóstica</h3>
 <p class="font-body-md text-on-surface-variant leading-relaxed">Algoritmos avanzados que ayudan a nuestros expertos a detectar problemas ocultos antes de que sean visibles.</p>
 </div>
 </div>
 </section>
 <!-- Services Section -->
-<section id="servicios" class="px-margin-desktop max-w-container-max mx-auto mb-section-gap" aria-labelledby="services-title">
-<div class="flex flex-col md:flex-row justify-between items-end mb-stack-lg gap-gutter">
-<div class="max-w-xl">
+<section id="servicios" class="px-4 sm:px-6 lg:px-margin-desktop max-w-container-max mx-auto mb-16 lg:mb-section-gap" aria-labelledby="services-title">
+<div class="flex flex-col md:flex-row justify-between items-end mb-6 lg:mb-stack-lg gap-gutter">
+<div class="max-w-xl text-center md:text-left">
 <h2 id="services-title" class="font-headline-lg text-headline-lg text-primary mb-stack-sm">Servicios Especializados</h2>
 <p class="font-body-md text-on-surface-variant">Ofrecemos soluciones integrales para cada etapa de su salud dental, desde prevención hasta estética avanzada.</p>
 </div>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-gutter">
 <!-- Large card -->
-<div class="md:col-span-2 glass-card p-stack-lg rounded-3xl group hover:border-primary/40 transition-colors">
-<div class="w-14 h-14 bg-primary-fixed rounded-2xl flex items-center justify-center text-primary mb-stack-md" aria-hidden="true">
-<span class="material-symbols-outlined text-[32px]">clean_hands</span>
+<div class="sm:col-span-2 glass-card p-6 lg:p-stack-lg rounded-2xl lg:rounded-3xl group hover:border-primary/40 transition-colors">
+<div class="w-12 h-12 lg:w-14 lg:h-14 bg-primary-fixed rounded-2xl flex items-center justify-center text-primary mb-stack-md" aria-hidden="true">
+<span class="material-symbols-outlined text-[28px] lg:text-[32px]">clean_hands</span>
 </div>
-<h3 class="font-headline-md text-headline-md mb-stack-sm">Limpieza Dental</h3>
+<h3 class="font-headline-md text-xl lg:text-headline-md mb-stack-sm">Limpieza Dental</h3>
 <p class="font-body-md text-on-surface-variant mb-stack-lg">Eliminación profunda de placa y sarro utilizando tecnología ultrasónica indolora para una frescura duradera.</p>
-<img class="w-full h-48 object-cover rounded-xl mt-auto opacity-80 group-hover:opacity-100 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFY1FDLnD2ceaIz6EfPXMrA1cJ427EjVq7LSePhX3WU_yy69WkrS3tD1KP65B3FnYaUfblR-sRlvrenLxUmkAQBDEgv3CdqClMpTnBoBOHl0Mx9LF5q3me-fkiwy_vTWvMtKngIR27MOL6BAPrMNQTWm589eOyfuhCWXDSaYGKPiNQICSObzvNWWOz1TcyvwmwvuzXOgClTPUOFBBCFuyuUY7OC2jyHiSH3c5ul-Wm6DXRnE0yLQvtLo_affU-ezUJmSm2lrXHOns" loading="lazy" alt="Estación de limpieza dental">
+<img class="w-full h-40 lg:h-48 object-cover rounded-xl mt-auto opacity-80 group-hover:opacity-100 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFY1FDLnD2ceaIz6EfPXMrA1cJ427EjVq7LSePhX3WU_yy69WkrS3tD1KP65B3FnYaUfblR-sRlvrenLxUmkAQBDEgv3CdqClMpTnBoBOHl0Mx9LF5q3me-fkiwy_vTWvMtKngIR27MOL6BAPrMNQTWm589eOyfuhCWXDSaYGKPiNQICSObzvNWWOz1TcyvwmwvuzXOgClTPUOFBBCFuyuUY7OC2jyHiSH3c5ul-Wm6DXRnE0yLQvtLo_affU-ezUJmSm2lrXHOns" loading="lazy" alt="Estación de limpieza dental">
 </div>
 <!-- Vertical cards -->
-<div class="md:col-span-1 glass-card p-stack-lg rounded-3xl flex flex-col">
-<div class="w-14 h-14 bg-secondary-fixed rounded-2xl flex items-center justify-center text-secondary mb-stack-md" aria-hidden="true">
-<span class="material-symbols-outlined text-[32px]">architecture</span>
+<div class="glass-card p-6 lg:p-stack-lg rounded-2xl lg:rounded-3xl flex flex-col">
+<div class="w-12 h-12 lg:w-14 lg:h-14 bg-secondary-fixed rounded-2xl flex items-center justify-center text-secondary mb-stack-md" aria-hidden="true">
+<span class="material-symbols-outlined text-[28px] lg:text-[32px]">architecture</span>
 </div>
-<h3 class="font-headline-md text-headline-md mb-stack-sm">Ortodoncia</h3>
+<h3 class="font-headline-md text-xl lg:text-headline-md mb-stack-sm">Ortodoncia</h3>
 <p class="font-body-md text-on-surface-variant">Alineación perfecta con opciones invisibles y brackets de última generación para todas las edades.</p>
 </div>
-<div class="md:col-span-1 glass-card p-stack-lg rounded-3xl flex flex-col bg-primary text-white border-none shadow-xl shadow-primary/20">
-<div class="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center mb-stack-md" aria-hidden="true">
-<span class="material-symbols-outlined text-[32px] text-white">favorite</span>
+<div class="glass-card p-6 lg:p-stack-lg rounded-2xl lg:rounded-3xl flex flex-col bg-primary text-white border-none shadow-xl shadow-primary/20">
+<div class="w-12 h-12 lg:w-14 lg:h-14 bg-white/20 rounded-2xl flex items-center justify-center mb-stack-md" aria-hidden="true">
+<span class="material-symbols-outlined text-[28px] lg:text-[32px] text-white">favorite</span>
 </div>
-<h3 class="font-headline-md text-headline-md mb-stack-sm text-white">Implantes</h3>
+<h3 class="font-headline-md text-xl lg:text-headline-md mb-stack-sm text-white">Implantes</h3>
 <p class="font-body-md text-white/80">Recupera la funcionalidad y estética de tu sonrisa con prótesis permanentes de alta durabilidad.</p>
 </div>
 </div>
 </section>
 <!-- Testimonials Section -->
-<section class="bg-surface-container py-24 mb-section-gap" aria-labelledby="testimonials-title">
-<div class="px-margin-desktop max-w-container-max mx-auto">
-<div class="text-center mb-16">
+<section class="bg-surface-container py-16 lg:py-24 mb-16 lg:mb-section-gap" aria-labelledby="testimonials-title">
+<div class="px-4 sm:px-6 lg:px-margin-desktop max-w-container-max mx-auto">
+<div class="text-center mb-10 lg:mb-16">
 <h2 id="testimonials-title" class="font-headline-lg text-headline-lg text-primary mb-4">Lo que dicen nuestros pacientes</h2>
 <div class="flex justify-center gap-1 text-secondary" aria-label="Calificación de 5 estrellas">
 <span class="material-symbols-outlined" aria-hidden="true">star</span>
@@ -308,9 +399,9 @@
 <span class="material-symbols-outlined" aria-hidden="true">star</span>
 </div>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-<div class="bg-white p-10 rounded-[32px] shadow-sm border border-white/40">
-<p class="font-body-lg text-on-surface italic mb-8">"Increíble experiencia. El trato es muy humano y la tecnología que usan hace que no sientas nada. Mi sonrisa nunca se vio mejor."</p>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+<div class="bg-white p-6 sm:p-8 lg:p-10 rounded-2xl lg:rounded-[32px] shadow-sm border border-white/40">
+<p class="font-body-lg text-on-surface italic mb-6 lg:mb-8">"Increíble experiencia. El trato es muy humano y la tecnología que usan hace que no sientas nada. Mi sonrisa nunca se vio mejor."</p>
 <div class="flex items-center gap-4">
 <div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-bold" aria-hidden="true">ML</div>
 <div>
@@ -319,8 +410,8 @@
 </div>
 </div>
 </div>
-<div class="bg-white p-10 rounded-[32px] shadow-sm border border-white/40">
-<p class="font-body-lg text-on-surface italic mb-8">"Llevaba años posponiendo mis implantes por miedo. El equipo de Ethereal me dio la confianza que necesitaba. Totalmente recomendado."</p>
+<div class="bg-white p-6 sm:p-8 lg:p-10 rounded-2xl lg:rounded-[32px] shadow-sm border border-white/40">
+<p class="font-body-lg text-on-surface italic mb-6 lg:mb-8">"Llevaba años posponiendo mis implantes por miedo. El equipo de Ethereal me dio la confianza que necesitaba. Totalmente recomendado."</p>
 <div class="flex items-center gap-4">
 <div class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary font-bold" aria-hidden="true">RG</div>
 <div>
@@ -329,8 +420,8 @@
 </div>
 </div>
 </div>
-<div class="bg-white p-10 rounded-[32px] shadow-sm border border-white/40">
-<p class="font-body-lg text-on-surface italic mb-8">"Las carillas cambiaron mi vida. El diseño digital permite ver el resultado antes de empezar. El proceso fue impecable."</p>
+<div class="bg-white p-6 sm:p-8 lg:p-10 rounded-2xl lg:rounded-[32px] shadow-sm border border-white/40">
+<p class="font-body-lg text-on-surface italic mb-6 lg:mb-8">"Las carillas cambiaron mi vida. El diseño digital permite ver el resultado antes de empezar. El proceso fue impecable."</p>
 <div class="flex items-center gap-4">
 <div class="w-12 h-12 rounded-full bg-tertiary-fixed flex items-center justify-center text-tertiary font-bold" aria-hidden="true">AV</div>
 <div>
@@ -343,41 +434,41 @@
 </div>
 </section>
 <!-- About Section (Nosotros) -->
-<section id="nosotros" class="px-margin-desktop max-w-container-max mx-auto mb-section-gap" aria-labelledby="about-title">
-<div class="glass-card rounded-[40px] p-10 lg:p-16">
-<div class="grid lg:grid-cols-2 gap-12 items-center">
+<section id="nosotros" class="px-4 sm:px-6 lg:px-margin-desktop max-w-container-max mx-auto mb-16 lg:mb-section-gap" aria-labelledby="about-title">
+<div class="glass-card rounded-2xl lg:rounded-[40px] p-6 sm:p-8 lg:p-16">
+<div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 <div>
-<h2 id="about-title" class="font-headline-lg text-headline-lg text-primary mb-6">Sobre Nosotros</h2>
-<p class="font-body-lg text-on-surface-variant mb-6">En Ethereal Dental combinamos la excelencia clínica con un trato humano excepcional. Nuestro equipo de especialistas está comprometido con tu salud bucal y tu bienestar.</p>
-<p class="font-body-lg text-on-surface-variant mb-8">Contamos con más de 15 años de experiencia transformando sonrisas y mejorando la calidad de vida de nuestros pacientes mediante tecnología de punta y técnicas mínimamente invasivas.</p>
-<div class="grid grid-cols-2 gap-6">
-<div class="text-center p-6 bg-white/50 rounded-2xl">
-<div class="text-4xl font-bold text-primary mb-2">15+</div>
-<div class="text-label-md text-on-surface-variant">Años de Experiencia</div>
+<h2 id="about-title" class="font-headline-lg text-headline-lg text-primary mb-4 lg:mb-6">Sobre Nosotros</h2>
+<p class="font-body-lg text-on-surface-variant mb-4 lg:mb-6">En Ethereal Dental combinamos la excelencia clínica con un trato humano excepcional. Nuestro equipo de especialistas está comprometido con tu salud bual y tu bienestar.</p>
+<p class="font-body-lg text-on-surface-variant mb-6 lg:mb-8">Contamos con más de 15 años de experiencia transformando sonrisas y mejorando la calidad de vida de nuestros pacientes mediante tecnología de punta y técnicas mínimamente invasivas.</p>
+<div class="grid grid-cols-2 gap-4 lg:gap-6">
+<div class="text-center p-4 lg:p-6 bg-white/50 rounded-2xl">
+<div class="text-3xl lg:text-4xl font-bold text-primary mb-2">15+</div>
+<div class="text-label-sm lg:text-label-md text-on-surface-variant">Años de Experiencia</div>
 </div>
-<div class="text-center p-6 bg-white/50 rounded-2xl">
-<div class="text-4xl font-bold text-primary mb-2">2500+</div>
-<div class="text-label-md text-on-surface-variant">Pacientes Felices</div>
+<div class="text-center p-4 lg:p-6 bg-white/50 rounded-2xl">
+<div class="text-3xl lg:text-4xl font-bold text-primary mb-2">2500+</div>
+<div class="text-label-sm lg:text-label-md text-on-surface-variant">Pacientes Felices</div>
 </div>
 </div>
 </div>
 <div class="relative">
 <div class="absolute -top-10 -right-10 w-40 h-40 bg-secondary/10 rounded-full blur-3xl" aria-hidden="true"></div>
-<img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&auto=format&fit=crop" alt="Equipo de Ethereal Dental" class="rounded-3xl shadow-2xl w-full" loading="lazy">
+<img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&auto=format&fit=crop" alt="Equipo de Ethereal Dental" class="rounded-2xl lg:rounded-3xl shadow-2xl w-full" loading="lazy">
 </div>
 </div>
 </div>
 </section>
 <!-- Contact Section -->
-<section id="contacto" class="px-margin-desktop max-w-container-max mx-auto mb-section-gap" aria-labelledby="contact-title">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<section id="contacto" class="px-4 sm:px-6 lg:px-margin-desktop max-w-container-max mx-auto mb-16 lg:mb-section-gap" aria-labelledby="contact-title">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
 <div class="relative">
 <div class="absolute -top-10 -left-10 w-40 h-40 bg-secondary/10 rounded-full blur-3xl" aria-hidden="true"></div>
 <h2 id="contact-title" class="font-headline-lg text-headline-lg mb-stack-md text-on-surface">¿Listo para mejorar tu salud dental?</h2>
 <p class="font-body-lg text-on-surface-variant mb-stack-lg">Completa el formulario y uno de nuestros especialistas se pondrá en contacto contigo a la brevedad para coordinar tu primera visita.</p>
-<ul class="space-y-6">
-<li class="flex items-center gap-6 p-4 rounded-2xl bg-white/50 border border-white/40 backdrop-blur-sm">
-<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary" aria-hidden="true">
+<ul class="space-y-4 lg:space-y-6">
+<li class="flex items-center gap-4 lg:gap-6 p-3 lg:p-4 rounded-2xl bg-white/50 border border-white/40 backdrop-blur-sm">
+<div class="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary" aria-hidden="true">
 <span class="material-symbols-outlined">call</span>
 </div>
 <div>
@@ -385,8 +476,8 @@
 <span class="font-body-md font-semibold text-on-surface">+52 (555) 123-4567</span>
 </div>
 </li>
-<li class="flex items-center gap-6 p-4 rounded-2xl bg-white/50 border border-white/40 backdrop-blur-sm">
-<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary" aria-hidden="true">
+<li class="flex items-center gap-4 lg:gap-6 p-3 lg:p-4 rounded-2xl bg-white/50 border border-white/40 backdrop-blur-sm">
+<div class="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary" aria-hidden="true">
 <span class="material-symbols-outlined">location_on</span>
 </div>
 <div>
@@ -396,21 +487,21 @@
 </li>
 </ul>
 </div>
-<div class="glass-card p-10 rounded-[40px] border-2 border-white shadow-2xl relative">
+<div class="glass-card p-6 sm:p-8 lg:p-10 rounded-2xl lg:rounded-[40px] border-2 border-white shadow-2xl relative">
 <div class="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-primary/5 blur-[80px]" aria-hidden="true"></div>
-<form class="space-y-6" id="contactForm" novalidate>
+<form class="space-y-4 lg:space-y-6" id="contactForm" novalidate>
 <div>
-<label class="block font-label-md text-on-surface-variant mb-3" for="nombre">Nombre Completo</label>
-<input id="nombre" name="nombre" class="w-full bg-white/60 border border-outline-variant/30 rounded-2xl p-4 focus:ring-2 focus:ring-primary focus:bg-white transition-all placeholder:text-on-surface-variant/40" placeholder="Ej: Juan Pérez" required type="text" autocomplete="name">
+<label class="block font-label-md text-on-surface-variant mb-2 lg:mb-3" for="nombre">Nombre Completo</label>
+<input id="nombre" name="nombre" class="w-full bg-white/60 border border-outline-variant/30 rounded-xl lg:rounded-2xl p-3 lg:p-4 focus:ring-2 focus:ring-primary focus:bg-white transition-all placeholder:text-on-surface-variant/40" placeholder="Ej: Juan Pérez" required type="text" autocomplete="name">
 </div>
 <div>
-<label class="block font-label-md text-on-surface-variant mb-3" for="telefono">Teléfono de Contacto</label>
-<input id="telefono" name="telefono" class="w-full bg-white/60 border border-outline-variant/30 rounded-2xl p-4 focus:ring-2 focus:ring-primary focus:bg-white transition-all placeholder:text-on-surface-variant/40" placeholder="Tu número" required type="tel" autocomplete="tel" pattern="[0-9]{10}">
+<label class="block font-label-md text-on-surface-variant mb-2 lg:mb-3" for="telefono">Teléfono de Contacto</label>
+<input id="telefono" name="telefono" class="w-full bg-white/60 border border-outline-variant/30 rounded-xl lg:rounded-2xl p-3 lg:p-4 focus:ring-2 focus:ring-primary focus:bg-white transition-all placeholder:text-on-surface-variant/40" placeholder="Tu número" required type="tel" autocomplete="tel" pattern="[0-9]{10}">
 </div>
 <div>
-<label class="block font-label-md text-on-surface-variant mb-3" for="motivo">Motivo de Consulta</label>
+<label class="block font-label-md text-on-surface-variant mb-2 lg:mb-3" for="motivo">Motivo de Consulta</label>
 <div class="relative">
-<select id="motivo" name="motivo" class="w-full bg-white/60 border border-outline-variant/30 rounded-2xl p-4 focus:ring-2 focus:ring-primary focus:bg-white transition-all appearance-none">
+<select id="motivo" name="motivo" class="w-full bg-white/60 border border-outline-variant/30 rounded-xl lg:rounded-2xl p-3 lg:p-4 focus:ring-2 focus:ring-primary focus:bg-white transition-all appearance-none">
 <option>Revisión General</option>
 <option>Urgencia Dental</option>
 <option>Ortodoncia</option>
@@ -419,7 +510,7 @@
 <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant" aria-hidden="true">expand_more</span>
 </div>
 </div>
-<button class="w-full bg-primary text-white font-headline-md py-5 rounded-2xl flex items-center justify-center gap-3 transition-transform hover:scale-[1.01] active:scale-95 shadow-xl shadow-primary/20 mt-4" type="submit" aria-label="Enviar formulario vía WhatsApp">
+<button class="w-full bg-primary text-white font-headline-md py-4 lg:py-5 rounded-xl lg:rounded-2xl flex items-center justify-center gap-3 transition-transform hover:scale-[1.01] active:scale-95 shadow-xl shadow-primary/20 mt-4" type="submit" aria-label="Enviar formulario vía WhatsApp">
 <span class="material-symbols-outlined text-[20px]" aria-hidden="true">chat</span>
                             Enviar vía WhatsApp
                         </button>
@@ -429,31 +520,31 @@
 </section>
 </main>
 <!-- Footer -->
-<section class="px-margin-desktop max-w-container-max mx-auto mb-section-gap" aria-labelledby="location-title">
-    <div class="text-center mb-16">
+<section class="px-4 sm:px-6 lg:px-margin-desktop max-w-container-max mx-auto mb-16 lg:mb-section-gap" aria-labelledby="location-title">
+    <div class="text-center mb-10 lg:mb-16">
         <h2 id="location-title" class="font-headline-lg text-headline-lg text-primary mb-4">Nuestra Ubicación</h2>
         <p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto">Visítanos en el corazón de la Ciudad de México. Contamos con estacionamiento y acceso universal.</p>
     </div>
-    <div class="glass-card overflow-hidden rounded-[40px] p-2 bg-white/40 border-4 border-white shadow-2xl">
-        <div class="grid lg:grid-cols-3 gap-0 min-h-[450px]">
-            <div class="lg:col-span-2 relative min-h-[300px] overflow-hidden rounded-[32px]">
+    <div class="glass-card overflow-hidden rounded-2xl lg:rounded-[40px] p-2 bg-white/40 border-4 border-white shadow-2xl">
+        <div class="grid lg:grid-cols-3 gap-0 min-h-[300px] lg:min-h-[450px]">
+            <div class="lg:col-span-2 relative min-h-[300px] overflow-hidden rounded-2xl lg:rounded-[32px]">
                 <div class="absolute inset-0 bg-surface-container-highest/30 flex items-center justify-center" aria-hidden="true">
-                    <span class="material-symbols-outlined text-[120px] text-primary/10">map</span>
+                    <span class="material-symbols-outlined text-[80px] lg:text-[120px] text-primary/10">map</span>
                 </div>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.4832560868!2d-99.1672323!3d19.4270206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff35f5bd1563%3A0x6c366b0e61669441!2sAv.%20Paseo%20de%20la%20Reforma%20405%2C%20Cuauht%C3%A9moc%2C%2006500%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1sen!2smx!4v1715634567890!5m2!1sen!2smx" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="absolute inset-0 grayscale contrast-125 opacity-90 hover:grayscale-0 transition-all duration-500" title="Ubicación de Ethereal Dental en Google Maps">
                 </iframe>
             </div>
-            <div class="p-10 flex flex-col justify-center gap-8">
+            <div class="p-6 sm:p-8 lg:p-10 flex flex-col justify-center gap-6 lg:gap-8">
                 <div>
-                    <h4 class="font-headline-md text-headline-md text-on-surface mb-4">Dirección</h4>
-                    <p class="font-body-lg text-on-surface-variant">Av. Reforma 405, Piso 12,<br>Col. Cuauhtémoc, 06500<br>Ciudad de México, CDMX</p>
+                    <h4 class="font-headline-md text-xl lg:text-headline-md text-on-surface mb-3 lg:mb-4">Dirección</h4>
+                    <p class="font-body-md lg:font-body-lg text-on-surface-variant">Av. Reforma 405, Piso 12,<br>Col. Cuauhtémoc, 06500<br>Ciudad de México, CDMX</p>
                 </div>
-                <div class="space-y-4">
-                    <div class="flex items-center gap-4 text-primary">
+                <div class="space-y-3 lg:space-y-4">
+                    <div class="flex items-center gap-3 lg:gap-4 text-primary">
                         <span class="material-symbols-outlined" aria-hidden="true">directions</span>
                         <span class="font-label-md uppercase tracking-wider">Cómo llegar</span>
                     </div>
-                    <div class="flex items-center gap-4 text-primary">
+                    <div class="flex items-center gap-3 lg:gap-4 text-primary">
                         <span class="material-symbols-outlined" aria-hidden="true">local_parking</span>
                         <span class="font-label-md uppercase tracking-wider">Estacionamiento disponible</span>
                     </div>
@@ -462,34 +553,34 @@
         </div>
     </div>
 </section>
-<footer class="bg-surface-container-low w-full pt-section-gap pb-12" role="contentinfo">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-desktop max-w-container-max mx-auto">
-<div class="md:col-span-1">
-<div class="flex items-center gap-2 mb-stack-md">
+<footer class="bg-surface-container-low w-full pt-16 lg:pt-section-gap pb-8 lg:pb-12" role="contentinfo">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-gutter px-4 sm:px-6 lg:px-margin-desktop max-w-container-max mx-auto">
+<div class="md:col-span-1 text-center md:text-left">
+<div class="flex items-center gap-2 mb-stack-md justify-center md:justify-start">
 <div class="h-8 w-8 bg-primary rounded-lg flex items-center justify-center">
   <svg viewBox="0 0 24 24" fill="white" class="w-6 h-6" xmlns="http://www.w3.org/2000/svg">
     <path d="M12 2C8.5 2 6 4.5 6 8c0 2.5 1.5 4.5 3 6.5 1 1.5 2 3 2 5.5V22h2v-2c0-2.5 1-4 2-5.5 1.5-2 3-4 3-6.5 0-3.5-2.5-6-6-6zm0 2c2.5 0 4 1.5 4 4 0 2-1 3.5-2.5 5.5-.5.5-1 1.5-1.5 2.5-.5-1-1-2-1.5-2.5C9 11.5 8 10 8 8c0-2.5 1.5-4 4-4z"/>
     <path d="M12 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" opacity="0.6"/>
   </svg>
 </div>
-<span class="font-headline-md text-headline-md text-primary">Ethereal</span>
+<span class="font-headline-md text-xl lg:text-headline-md text-primary">Ethereal</span>
 </div>
-<p class="font-body-md text-on-surface-variant pr-4">Liderando el camino hacia la odontología del futuro con precisión y empatía.</p>
+<p class="font-body-md text-on-surface-variant">Liderando el camino hacia la odontología del futuro con precisión y empatía.</p>
 </div>
-<div class="space-y-stack-md">
+<div class="space-y-stack-md text-center md:text-left">
 <h4 class="font-label-md text-primary font-bold">Horarios</h4>
 <div class="font-body-md text-on-surface-variant space-y-2">
 <p>Lunes - Viernes: 9:00 - 19:00</p>
 <p>Sábados: 10:00 - 14:00</p>
-<p class="text-error font-bold italic flex items-center gap-2">
+<p class="text-error font-bold italic flex items-center gap-2 justify-center md:justify-start">
 <span class="w-2 h-2 rounded-full bg-error animate-pulse" aria-hidden="true"></span>
                         Urgencias 24/7
                     </p>
 </div>
 </div>
-<div class="space-y-stack-md">
+<div class="space-y-stack-md text-center md:text-left">
 <h4 class="font-label-md text-primary font-bold">Síguenos</h4>
-<div class="flex gap-4">
+<div class="flex gap-4 justify-center md:justify-start">
 <!-- Facebook Icon -->
 <a class="w-12 h-12 rounded-full bg-white flex items-center justify-center text-primary shadow-sm hover:scale-110 hover:bg-primary hover:text-white transition-all" href="https://facebook.com/tu-pagina" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en Facebook">
     <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -511,7 +602,7 @@
 </div>
 </div>
 </div>
-<div class="mt-20 px-margin-desktop max-w-container-max mx-auto pt-8 border-t border-outline-variant text-center">
+<div class="mt-12 lg:mt-20 px-4 sm:px-6 lg:px-margin-desktop max-w-container-max mx-auto pt-6 lg:pt-8 border-t border-outline-variant text-center">
 <p class="font-body-md text-on-surface-variant">© 2026 Ethereal Dental Clinic. Todos los derechos reservados.</p>
 </div>
 </footer>
@@ -551,11 +642,11 @@
     window.addEventListener('scroll', () => {
         const nav = document.querySelector('nav');
         if (window.scrollY > 50) {
-            nav.classList.add('py-3', 'shadow-md');
-            nav.classList.remove('py-4', 'shadow-[0px_20px_40px_rgba(0,0,0,0.04)]');
+            nav.classList.add('py-2', 'shadow-md');
+            nav.classList.remove('py-3', 'lg:py-4', 'shadow-[0px_20px_40px_rgba(0,0,0,0.04)]');
         } else {
-            nav.classList.add('py-4', 'shadow-[0px_20px_40px_rgba(0,0,0,0.04)]');
-            nav.classList.remove('py-3', 'shadow-md');
+            nav.classList.add('py-3', 'lg:py-4', 'shadow-[0px_20px_40px_rgba(0,0,0,0.04)]');
+            nav.classList.remove('py-2', 'shadow-md');
         }
     });
 </script>
